@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,10 @@ public class PlayerTop : MonoBehaviour
         //pegando input do teclado
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
+
+
+        float angulo = Mathf.Atan2(y , x ) * Mathf.Rad2Deg +90;
+        transform.rotation = Quaternion.Euler(0,0,angulo);
 
         //imprimindo valores no console
         //Debug.Log("Horizontal: " + x); 
